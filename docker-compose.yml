@@ -1,0 +1,12 @@
+services:
+  svn:
+    build: .
+    container_name: svn-server
+    network_mode: "host"
+    volumes:
+      - ./repos:/var/lib/svn
+      - ./conf/dav_svn.conf:/etc/apache2/mods-enabled/dav_svn.conf:ro
+      - ./conf/authz:/etc/svn/authz:ro
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai

@@ -1,0 +1,16 @@
+<Location /svn>
+    DAV svn
+    SVNParentPath /var/lib/svn
+    AuthzSVNAccessFile /etc/svn/authz
+
+    AuthType Basic
+    AuthName "SVN Repository"
+    AuthBasicProvider ldap
+
+    AuthLDAPURL ""
+
+    AuthLDAPBindDN ""
+    AuthLDAPBindPassword ""
+
+    Require valid-user
+</Location>
