@@ -7,10 +7,10 @@
     AuthName "SVN Repository"
     AuthBasicProvider ldap
 
-    AuthLDAPURL ""
+    AuthLDAPURL "ldap://your.ldap.server/ou=users,dc=ldap,dc=createchstudio,dc=com?mail?sub?(objectClass=person)"
 
-    AuthLDAPBindDN ""
-    AuthLDAPBindPassword ""
+    AuthLDAPBindDN "cn=your-ldap-bind-username,ou=users,dc=your,dc=ldap,dc=server"
+    AuthLDAPBindPassword "your-ldap-bind-password"
 
     Require valid-user
 </Location>

@@ -51,10 +51,10 @@ def fetch_group_members(group_dn):
         conn.search(
             search_base=dn,
             search_filter="(objectClass=person)",
-            attributes=["sAMAccountName"],
+            attributes=["mail"],
         )
         if conn.entries:
-            usernames.append(str(conn.entries[0]["sAMAccountName"]))
+            usernames.append(str(conn.entries[0]["mail"]))
     conn.unbind()
     return usernames
 
